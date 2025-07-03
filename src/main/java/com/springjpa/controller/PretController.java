@@ -4,10 +4,12 @@ import com.springjpa.entity.Adherant;
 import com.springjpa.entity.Exemplaire;
 import com.springjpa.service.AdherantService;
 import com.springjpa.service.ExemplaireService;
+// import com.springjpa.service.PretService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+// import jakarta.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -20,11 +22,22 @@ public class PretController {
     @Autowired
     private AdherantService adherantService;
 
+   
+
 
     @GetMapping("/")
     public String index() {
         return "index"; // Redirection vers la page d'accueil
     }
+
+    // @Autowired
+    // private PretService pretService;
+    // Afficher les prêts en cours de l'adhérent via paramètre URL
+    // @GetMapping("/prets")
+    // public String afficherPretsEnCours(@RequestParam("idAdherant") Integer idAdherant, Model model) {
+    //     model.addAttribute("prets", pretService.getPretsEnCoursParAdherant(idAdherant));
+    //     return "prets";
+    // }
 
     @GetMapping("/preter")
     public String preter(Model model) {

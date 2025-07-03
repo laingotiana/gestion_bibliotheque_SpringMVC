@@ -11,6 +11,11 @@ import com.springjpa.repository.ExemplaireRepository;
 public class ExemplaireService {
     @Autowired
     private ExemplaireRepository exemplaireRepository;
+    
+
+    public List<Exemplaire> getExemplairesDisponibles() {
+        return exemplaireRepository.findByDispoTrue();
+    }
 
     public Exemplaire findById(Integer id){
         return exemplaireRepository.findById(id).get();

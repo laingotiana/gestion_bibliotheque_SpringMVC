@@ -23,4 +23,9 @@ public class PretService {
     public void save(Pret pret){
         pretRepository.save(pret);
     }
+
+    // // Prêts en cours pour un adhérent
+    // public List<Pret> getPretsEnCoursParAdherant(Integer idAdherant) {
+    //     return pretRepository.findByAdherantIdAdherantAndDateRetourIsNull(idAdherant);
+    // }
 }

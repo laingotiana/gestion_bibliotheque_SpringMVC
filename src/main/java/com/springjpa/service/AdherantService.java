@@ -36,6 +36,8 @@ public class AdherantService {
         adherantRepository.save(adherant);
     }
 
+ 
+
     public boolean isInscri(Integer adherantId) {
         var adherantOpt = adherantRepository.findById(adherantId);
         if (adherantOpt.isEmpty()) return false;
